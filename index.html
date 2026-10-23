@@ -319,5 +319,39 @@
   });
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-</body>
-</html>
+<script>
+  const languageSelect = document.getElementById("languageSelect");
+
+  function setLanguage(language) {
+    document.body.dataset.lang = language;
+    document.documentElement.lang = language;
+    languageSelect.value = language;
+    localStorage.setItem("preferredLanguage", language);
+  }
+
+  languageSelect.addEventListener("change", function () {
+    setLanguage(this.value);
+  });
+
+  setLanguage(localStorage.getItem("preferredLanguage") || "en");
+</script></body><div class="language-switcher">
+  <label for="languageSelect">Language / 语言 / Idioma:</label>
+  <select id="languageSelect">
+    <option value="en">English</option>
+    <option value="zh">中文</option>
+    <option value="es">Español</option>
+  </select>
+</div>
+</html><h2 class="en">About Me</h2>
+<h2 class="zh">关于我</h2>
+<h2 class="es">Sobre mí</h2>
+<style>
+  body[data-lang="en"] .zh,
+  body[data-lang="en"] .es,
+  body[data-lang="zh"] .en,
+  body[data-lang="zh"] .es,
+  body[data-lang="es"] .en,
+  body[data-lang="es"] .zh {
+    display: none;
+  }
+</style>
