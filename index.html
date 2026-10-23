@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,11 +82,12 @@
   .contact-box p { color: var(--muted); margin: 7px 0 0; }
   footer { padding: 26px 0 36px; color: #7a858e; font-size: .8rem; }
   .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
-  .cn { display: none; }
-  body.show-cn .cn { display: block; }
-  body.show-cn .en { display: block; }
-  body.show-en .cn { display: none !important; }
-  body.show-en .en { display: block; }
+  .cn, .es { display: none; }
+  body.show-cn .en, body.show-es .en { display: none; }
+  body.show-cn .cn, body.show-es .es { display: revert; }
+  .section-cn { display: none; }
+  body.show-cn .section-cn { display: block; }
+  .language-label { font-size: .82rem; color: var(--muted); }
   .inline-cn { color: var(--muted); font-size: .88em; }
   @media (max-width: 760px) {
     .nav { padding: 14px 0; align-items: flex-start; }
@@ -116,13 +117,19 @@
     <a class="brand" href="#top">Honglin Zhu<span style="color:var(--accent)">.</span></a>
     <div class="nav-right">
       <nav aria-label="Main navigation">
-        <a href="#about"><span class="en">About</span><span class="cn">关于我</span></a>
-        <a href="#research"><span class="en">Research</span><span class="cn">研究兴趣</span></a>
-        <a href="#experience"><span class="en">Experience</span><span class="cn">科研经历</span></a>
-        <a href="#skills"><span class="en">Skills</span><span class="cn">技能</span></a>
-        <a href="#contact"><span class="en">Contact</span><span class="cn">联系</span></a>
+        <a href="#about"><span class="en">About</span><span class="es" lang="es">Acerca de</span><span class="cn">关于我</span></a>
+        <a href="#research"><span class="en">Research</span><span class="es" lang="es">Investigación</span><span class="cn">研究兴趣</span></a>
+        <a href="#experience"><span class="en">Experience</span><span class="es" lang="es">Experiencia</span><span class="cn">科研经历</span></a>
+        <a href="#skills"><span class="en">Skills</span><span class="es" lang="es">Habilidades</span><span class="cn">技能</span></a>
+        <a href="#contact"><span class="en">Contact</span><span class="es" lang="es">Contacto</span><span class="cn">联系</span></a>
       </nav>
-      <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">中文 / EN</button>
+      <label class="language-label" for="languageSelect">Language / 语言 / Idioma
+        <select class="lang-toggle" id="languageSelect">
+          <option value="en" lang="en">English</option>
+          <option value="zh" lang="zh-CN">中文</option>
+          <option value="es" lang="es">Español</option>
+        </select>
+      </label>
     </div>
   </div>
 </header>
@@ -131,15 +138,15 @@
   <div class="container hero">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow"><span class="en">Psychology · Research · Development</span><span class="cn">心理学 · 研究 · 发展</span></div>
+        <div class="eyebrow"><span class="en">Psychology · Research · Development</span><span class="es" lang="es">Psicología · Investigación · Desarrollo</span><span class="cn">心理学 · 研究 · 发展</span></div>
         <h1>Honglin Zhu</h1>
-        <p class="hero-subtitle en">Psychology undergraduate interested in understanding how children develop, learn, and interact with the world around them.</p>
+        <p class="hero-subtitle en">Psychology undergraduate interested in understanding how children develop, learn, and interact with the world around them.</p><p class="hero-subtitle es" lang="es">Estudiante de grado en Psicología con interés en comprender cómo se desarrollan los niños, cómo aprenden y cómo interactúan con el mundo que los rodea.</p>
         <p class="hero-subtitle cn">心理学本科生，关注儿童如何发展、学习，以及如何与周围的世界互动。</p>
-        <p class="hero-cn en">I am building a foundation in psychological research and exploring opportunities to contribute to research teams before pursuing graduate study.</p>
+        <p class="hero-cn en">I am building a foundation in psychological research and exploring opportunities to contribute to research teams before pursuing graduate study.</p><p class="hero-cn es" lang="es">Estoy construyendo una base en investigación psicológica y explorando oportunidades para contribuir a equipos de investigación antes de realizar estudios de posgrado.</p>
         <p class="hero-cn cn">我正在打好心理学研究基础，并希望在继续攻读研究生之前，积累研究团队协作与科研实践经验。</p>
         <div class="actions">
-          <a class="button primary" href="#research"><span class="en">Explore research interests</span><span class="cn">了解研究兴趣</span></a>
-          <a class="button secondary" href="#contact"><span class="en">Get in touch</span><span class="cn">联系我</span></a>
+          <a class="button primary" href="#research"><span class="en">Explore research interests</span><span class="es" lang="es">Explorar intereses de investigación</span><span class="cn">了解研究兴趣</span></a>
+          <a class="button secondary" href="#contact"><span class="en">Get in touch</span><span class="es" lang="es">Contactar</span><span class="cn">联系我</span></a>
         </div>
       </div>
       <div class="avatar-wrap">
@@ -151,18 +158,18 @@
   <section id="about">
     <div class="container">
       <div class="section-head">
-        <h2><span class="en">About Me</span><span class="cn">关于我</span><span class="section-cn">个人简介</span></h2>
-        <p class="section-intro en">I study psychology at Brigham Young University–Idaho. My current academic interests center on developmental psychology and child development. I am especially interested in learning how research questions are developed, how evidence is evaluated, and how findings can inform our understanding of human development.</p>
+        <h2><span class="en">About Me</span><span class="es" lang="es">Sobre mí</span><span class="cn">关于我</span><span class="section-cn">个人简介</span></h2>
+        <p class="section-intro en">I study psychology at Brigham Young University–Idaho. My current academic interests center on developmental psychology and child development. I am especially interested in learning how research questions are developed, how evidence is evaluated, and how findings can inform our understanding of human development.</p><p class="section-intro es" lang="es">Estudio Psicología en Brigham Young University–Idaho. Mis intereses académicos actuales se centran en la psicología del desarrollo y el desarrollo infantil. Me interesa especialmente aprender cómo se formulan las preguntas de investigación, cómo se evalúa la evidencia y cómo los hallazgos pueden ayudarnos a comprender el desarrollo humano.</p>
         <p class="section-intro cn">我目前就读于杨百翰大学爱达荷分校（BYU–Idaho）心理学本科专业。我的学术兴趣主要集中在发展心理学与儿童发展。我希望进一步学习如何提出研究问题、评估研究证据，以及理解研究发现如何帮助我们认识人的发展过程。</p>
       </div>
       <div class="two-col">
         <article class="panel">
-          <h3><span class="en">Education</span><span class="cn">教育背景</span></h3>
-          <p><strong>Brigham Young University–Idaho</strong><br><span class="en">Undergraduate study in Psychology</span><span class="cn">心理学本科在读</span></p>
+          <h3><span class="en">Education</span><span class="es" lang="es">Formación académica</span><span class="cn">教育背景</span></h3>
+          <p><strong>Brigham Young University–Idaho</strong><br><span class="en">Undergraduate study in Psychology</span><span class="es" lang="es">Estudios de grado en Psicología</span><span class="cn">心理学本科在读</span></p>
         </article>
         <article class="panel">
-          <h3><span class="en">Long-term direction</span><span class="cn">长期发展方向</span></h3>
-          <p><span class="en">Build research experience, pursue a full-time research assistant opportunity, and prepare for doctoral study in psychology.</span><span class="cn">积累科研经验，争取全职研究助理机会，并为未来攻读心理学博士学位做准备。</span></p>
+          <h3><span class="en">Long-term direction</span><span class="es" lang="es">Orientación a largo plazo</span><span class="cn">长期发展方向</span></h3>
+          <p><span class="en">Build research experience, pursue a full-time research assistant opportunity, and prepare for doctoral study in psychology.</span><span class="es" lang="es">Adquirir experiencia en investigación, buscar una oportunidad como asistente de investigación a tiempo completo y prepararme para un doctorado en Psicología.</span><span class="cn">积累科研经验，争取全职研究助理机会，并为未来攻读心理学博士学位做准备。</span></p>
         </article>
       </div>
     </div>
@@ -171,31 +178,31 @@
   <section id="research">
     <div class="container">
       <div class="section-head">
-        <h2><span class="en">Research Interests</span><span class="cn">研究兴趣</span><span class="section-cn">希望深入探索的方向</span></h2>
-        <p class="section-intro en">I am interested in questions about development, learning, and social judgment. These are developing interests rather than a claim of specialization.</p>
+        <h2><span class="en">Research Interests</span><span class="es" lang="es">Intereses de investigación</span><span class="cn">研究兴趣</span><span class="section-cn">希望深入探索的方向</span></h2>
+        <p class="section-intro en">I am interested in questions about development, learning, and social judgment. These are developing interests rather than a claim of specialization.</p><p class="section-intro es" lang="es">Me interesan las preguntas sobre el desarrollo, el aprendizaje y el juicio social. Son intereses en formación, no una afirmación de especialización.</p>
         <p class="section-intro cn">我对人的发展、学习以及社会判断相关问题感兴趣。目前这些是正在逐步发展的研究兴趣，并不代表我已经在这些领域形成专业专长。</p>
       </div>
       <div class="two-col">
         <article class="panel">
-          <h3><span class="en">Developmental Psychology</span><span class="cn">发展心理学</span></h3>
-          <p><span class="en">How thinking, emotion, and behavior change across development.</span><span class="cn">思维、情绪和行为如何随着成长而变化。</span></p>
+          <h3><span class="en">Developmental Psychology</span><span class="es" lang="es">Psicología del desarrollo</span><span class="cn">发展心理学</span></h3>
+          <p><span class="en">How thinking, emotion, and behavior change across development.</span><span class="es" lang="es">Cómo cambian el pensamiento, las emociones y la conducta a lo largo del desarrollo.</span><span class="cn">思维、情绪和行为如何随着成长而变化。</span></p>
         </article>
         <article class="panel">
-          <h3><span class="en">Child Development</span><span class="cn">儿童发展</span></h3>
-          <p><span class="en">How children's experiences and environments shape learning and social development.</span><span class="cn">儿童的生活经历与成长环境如何影响学习和社会性发展。</span></p>
+          <h3><span class="en">Child Development</span><span class="es" lang="es">Desarrollo infantil</span><span class="cn">儿童发展</span></h3>
+          <p><span class="en">How children's experiences and environments shape learning and social development.</span><span class="es" lang="es">Cómo las experiencias y los entornos de los niños influyen en el aprendizaje y el desarrollo social.</span><span class="cn">儿童的生活经历与成长环境如何影响学习和社会性发展。</span></p>
         </article>
         <article class="panel">
-          <h3><span class="en">Social Judgment</span><span class="cn">社会判断</span></h3>
-          <p><span class="en">How people form impressions and evaluate effort, work, and caregiving.</span><span class="cn">人们如何形成印象，并评价努力、工作与照护行为。</span></p>
+          <h3><span class="en">Social Judgment</span><span class="es" lang="es">Juicio social</span><span class="cn">社会判断</span></h3>
+          <p><span class="en">How people form impressions and evaluate effort, work, and caregiving.</span><span class="es" lang="es">Cómo las personas se forman impresiones y evalúan el esfuerzo, el trabajo y los cuidados.</span><span class="cn">人们如何形成印象，并评价努力、工作与照护行为。</span></p>
         </article>
         <article class="panel">
-          <h3><span class="en">Research Methods</span><span class="cn">研究方法</span></h3>
-          <p><span class="en">Study design, measurement, replication, and interpretation of quantitative evidence.</span><span class="cn">研究设计、测量、重复研究，以及定量证据的解释。</span></p>
+          <h3><span class="en">Research Methods</span><span class="es" lang="es">Métodos de investigación</span><span class="cn">研究方法</span></h3>
+          <p><span class="en">Study design, measurement, replication, and interpretation of quantitative evidence.</span><span class="es" lang="es">Diseño de estudios, medición, replicación e interpretación de evidencia cuantitativa.</span><span class="cn">研究设计、测量、重复研究，以及定量证据的解释。</span></p>
         </article>
       </div>
       <div class="tag-list">
-        <span class="tag">Developmental Psychology</span><span class="tag">Child Development</span>
-        <span class="tag">Research Methods</span><span class="tag">Quantitative Research</span><span class="tag">Replication</span>
+        <span class="tag"><span class="en">Developmental Psychology</span><span class="cn">Developmental Psychology</span><span class="es" lang="es">Psicología del desarrollo</span></span><span class="tag"><span class="en">Child Development</span><span class="cn">Child Development</span><span class="es" lang="es">Desarrollo infantil</span></span>
+        <span class="tag"><span class="en">Research Methods</span><span class="cn">Research Methods</span><span class="es" lang="es">Métodos de investigación</span></span><span class="tag"><span class="en">Quantitative Research</span><span class="cn">Quantitative Research</span><span class="es" lang="es">Investigación cuantitativa</span></span><span class="tag"><span class="en">Replication</span><span class="cn">Replication</span><span class="es" lang="es">Replicación</span></span>
       </div>
     </div>
   </section>
@@ -203,68 +210,68 @@
   <section id="experience">
     <div class="container">
       <div class="section-head">
-        <h2><span class="en">Research Experience</span><span class="cn">科研经历</span><span class="section-cn">研究训练与项目</span></h2>
-        <p class="section-intro en">The section below describes a research project in development. Update the details as the study progresses, and add confirmed dates, collaborators, and outputs when available.</p>
+        <h2><span class="en">Research Experience</span><span class="es" lang="es">Experiencia en investigación</span><span class="cn">科研经历</span><span class="section-cn">研究训练与项目</span></h2>
+        <p class="section-intro en">The section below describes a research project in development. Update the details as the study progresses, and add confirmed dates, collaborators, and outputs when available.</p><p class="section-intro es" lang="es">La siguiente sección describe un proyecto de investigación en desarrollo. Los detalles se actualizarán a medida que avance el estudio, con fechas, colaboradores y resultados confirmados cuando estén disponibles.</p>
         <p class="section-intro cn">以下内容介绍一个正在开展的研究项目。随着项目推进，可以补充已确认的时间、合作人员和成果。</p>
       </div>
       <div class="timeline">
         <div class="timeline-item">
-          <h3><span class="en">Psychology Research Methods Project</span><span class="cn">心理学研究方法课程项目</span></h3>
-          <div class="meta"><span class="en">BYU–Idaho · Student research project</span><span class="cn">BYU–Idaho · 学生研究项目</span></div>
-          <p class="en">Developing a replication study based on research on gendered judgments of effort in work and caregiving contexts. The project involves understanding the original study, identifying measures, planning a survey, and considering appropriate quantitative analyses.</p>
+          <h3><span class="en">Psychology Research Methods Project</span><span class="es" lang="es">Proyecto de métodos de investigación en Psicología</span><span class="cn">心理学研究方法课程项目</span></h3>
+          <div class="meta"><span class="en">BYU–Idaho · Student research project</span><span class="es" lang="es">BYU–Idaho · Proyecto de investigación estudiantil</span><span class="cn">BYU–Idaho · 学生研究项目</span></div>
+          <p class="en">Developing a replication study based on research on gendered judgments of effort in work and caregiving contexts. The project involves understanding the original study, identifying measures, planning a survey, and considering appropriate quantitative analyses.</p><p class="es" lang="es">Estoy desarrollando un estudio de replicación basado en investigaciones sobre los juicios de género acerca del esfuerzo en contextos laborales y de cuidados. El proyecto implica comprender el estudio original, identificar medidas, planificar una encuesta y considerar los análisis cuantitativos adecuados.</p>
           <p class="cn">正在围绕工作与照护情境中对努力的性别化评价，设计一项基于既有研究的重复研究。项目涉及理解原始研究、查找测量工具、规划问卷，以及考虑合适的定量分析方法。</p>
         </div>
         <div class="timeline-item">
-          <h3><span class="en">Research Presentation — Planned</span><span class="cn">研究成果展示 — 计划中</span></h3>
-          <div class="meta"><span class="en">Rocky Mountain Psychological Association (RMPA) · 2027</span><span class="cn">落基山心理学会（RMPA）· 2027 年</span></div>
-          <p class="en">Planning to submit and present a research poster. Presentation status and final title should be updated after acceptance is confirmed.</p>
+          <h3><span class="en">Research Presentation — Planned</span><span class="es" lang="es">Presentación de investigación — Prevista</span><span class="cn">研究成果展示 — 计划中</span></h3>
+          <div class="meta"><span class="en">Rocky Mountain Psychological Association (RMPA) · 2027</span><span class="es" lang="es">Rocky Mountain Psychological Association (RMPA) · 2027</span><span class="cn">落基山心理学会（RMPA）· 2027 年</span></div>
+          <p class="en">Planning to submit and present a research poster. Presentation status and final title should be updated after acceptance is confirmed.</p><p class="es" lang="es">Tengo previsto enviar y presentar un póster de investigación. El estado de la presentación y el título definitivo se actualizarán una vez confirmada su aceptación.</p>
           <p class="cn">计划提交并展示研究海报。请在收到录用确认后，再更新最终题目和展示状态。</p>
         </div>
       </div>
-      <div class="note"><strong><span class="en">Accuracy note</span><span class="cn">内容准确性说明</span></strong> — <span class="en">This page distinguishes current interests and plans from completed achievements. Only describe a conference presentation as accepted or presented once that status is confirmed.</span><span class="cn">本网页将当前兴趣和计划与已完成的成果区分开。只有在确认录用或实际展示后，才能将会议展示写为已录用或已完成。</span></div>
+      <div class="note"><strong><span class="en">Accuracy note</span><span class="es" lang="es">Nota sobre la exactitud</span><span class="cn">内容准确性说明</span></strong> — <span class="en">This page distinguishes current interests and plans from completed achievements. Only describe a conference presentation as accepted or presented once that status is confirmed.</span><span class="es" lang="es">Esta página distingue los intereses y planes actuales de los logros ya alcanzados. Una presentación en un congreso solo debe describirse como aceptada o realizada cuando ese estado esté confirmado.</span><span class="cn">本网页将当前兴趣和计划与已完成的成果区分开。只有在确认录用或实际展示后，才能将会议展示写为已录用或已完成。</span></div>
     </div>
   </section>
 
   <section id="skills">
     <div class="container">
       <div class="section-head">
-        <h2><span class="en">Skills & Learning</span><span class="cn">技能与学习方向</span><span class="section-cn">持续发展的能力</span></h2>
-        <p class="section-intro en">A transparent snapshot of the methods and tools I am building familiarity with as I prepare for research work.</p>
+        <h2><span class="en">Skills & Learning</span><span class="es" lang="es">Habilidades y aprendizaje</span><span class="cn">技能与学习方向</span><span class="section-cn">持续发展的能力</span></h2>
+        <p class="section-intro en">A transparent snapshot of the methods and tools I am building familiarity with as I prepare for research work.</p><p class="section-intro es" lang="es">Una descripción transparente de los métodos y herramientas con los que me estoy familiarizando mientras me preparo para trabajar en investigación.</p>
         <p class="section-intro cn">展示我为科研工作持续学习和熟悉的方法与工具。</p>
       </div>
       <div class="skills-grid">
         <article class="skill-card">
-          <h3><span class="en">Research Literacy</span><span class="cn">研究文献阅读</span></h3>
-          <p><span class="en">Reading empirical papers, identifying study variables, and understanding research design.</span><span class="cn">阅读实证研究论文、识别研究变量，并理解研究设计。</span></p>
+          <h3><span class="en">Research Literacy</span><span class="es" lang="es">Lectura de literatura científica</span><span class="cn">研究文献阅读</span></h3>
+          <p><span class="en">Reading empirical papers, identifying study variables, and understanding research design.</span><span class="es" lang="es">Lectura de artículos empíricos, identificación de variables y comprensión del diseño de investigación.</span><span class="cn">阅读实证研究论文、识别研究变量，并理解研究设计。</span></p>
         </article>
         <article class="skill-card">
-          <h3><span class="en">Survey Research</span><span class="cn">问卷研究</span></h3>
-          <p><span class="en">Learning survey construction and online study workflows using Qualtrics.</span><span class="cn">学习问卷设计，以及使用 Qualtrics 开展在线研究的流程。</span></p>
+          <h3><span class="en">Survey Research</span><span class="es" lang="es">Investigación mediante encuestas</span><span class="cn">问卷研究</span></h3>
+          <p><span class="en">Learning survey construction and online study workflows using Qualtrics.</span><span class="es" lang="es">Aprendizaje del diseño de encuestas y de los procesos de investigación en línea con Qualtrics.</span><span class="cn">学习问卷设计，以及使用 Qualtrics 开展在线研究的流程。</span></p>
         </article>
         <article class="skill-card">
-          <h3><span class="en">Quantitative Analysis</span><span class="cn">定量分析</span></h3>
-          <p><span class="en">Developing familiarity with statistical reasoning and learning R for research.</span><span class="cn">逐步建立统计思维，并学习使用 R 进行科研分析。</span></p>
+          <h3><span class="en">Quantitative Analysis</span><span class="es" lang="es">Análisis cuantitativo</span><span class="cn">定量分析</span></h3>
+          <p><span class="en">Developing familiarity with statistical reasoning and learning R for research.</span><span class="es" lang="es">Desarrollo del razonamiento estadístico y aprendizaje de R para la investigación.</span><span class="cn">逐步建立统计思维，并学习使用 R 进行科研分析。</span></p>
         </article>
       </div>
-      <p class="note"><span class="en">Please revise these descriptions to reflect your actual proficiency before using this page for applications.</span><span class="cn">在将网页用于正式申请前，请根据自己的实际熟练程度调整这些描述。</span></p>
+      <p class="note"><span class="en">Please revise these descriptions to reflect your actual proficiency before using this page for applications.</span><span class="es" lang="es">Estas descripciones deben ajustarse al nivel real de dominio antes de utilizar esta página en solicitudes académicas o profesionales.</span><span class="cn">在将网页用于正式申请前，请根据自己的实际熟练程度调整这些描述。</span></p>
     </div>
   </section>
 
   <section id="goals">
     <div class="container">
       <div class="section-head">
-        <h2><span class="en">Graduate Study Goals</span><span class="cn">研究生阶段目标</span><span class="section-cn">未来规划</span></h2>
-        <p class="section-intro en">I hope to gain hands-on experience in a full-time research assistant role after completing my undergraduate degree, then pursue doctoral training in psychology. I am especially interested in programs and labs studying developmental psychology and child development.</p>
+        <h2><span class="en">Graduate Study Goals</span><span class="es" lang="es">Objetivos de posgrado</span><span class="cn">研究生阶段目标</span><span class="section-cn">未来规划</span></h2>
+        <p class="section-intro en">I hope to gain hands-on experience in a full-time research assistant role after completing my undergraduate degree, then pursue doctoral training in psychology. I am especially interested in programs and labs studying developmental psychology and child development.</p><p class="section-intro es" lang="es">Espero adquirir experiencia práctica como asistente de investigación a tiempo completo tras finalizar mis estudios de grado y, posteriormente, realizar un doctorado en Psicología. Me interesan especialmente los programas y laboratorios que estudian la psicología del desarrollo y el desarrollo infantil.</p>
         <p class="section-intro cn">本科毕业后，我希望通过全职研究助理工作积累实践经验，之后继续攻读心理学博士学位。我尤其关注研究发展心理学与儿童发展的项目和实验室。</p>
       </div>
       <div class="two-col">
         <article class="panel">
-          <h3><span class="en">Near-term focus</span><span class="cn">近期重点</span></h3>
-          <p><span class="en">Strengthen research skills, contribute to a research team, and learn from experienced researchers.</span><span class="cn">加强研究技能、参与研究团队工作，并向有经验的研究者学习。</span></p>
+          <h3><span class="en">Near-term focus</span><span class="es" lang="es">Objetivos a corto plazo</span><span class="cn">近期重点</span></h3>
+          <p><span class="en">Strengthen research skills, contribute to a research team, and learn from experienced researchers.</span><span class="es" lang="es">Fortalecer mis habilidades de investigación, contribuir a un equipo y aprender de investigadores con experiencia.</span><span class="cn">加强研究技能、参与研究团队工作，并向有经验的研究者学习。</span></p>
         </article>
         <article class="panel">
-          <h3><span class="en">Long-term focus</span><span class="cn">长期重点</span></h3>
-          <p><span class="en">Find a doctoral program with strong mentorship and research fit in developmental psychology or child development.</span><span class="cn">寻找在导师指导和研究方向上与发展心理学或儿童发展兴趣相契合的博士项目。</span></p>
+          <h3><span class="en">Long-term focus</span><span class="es" lang="es">Objetivos a largo plazo</span><span class="cn">长期重点</span></h3>
+          <p><span class="en">Find a doctoral program with strong mentorship and research fit in developmental psychology or child development.</span><span class="es" lang="es">Encontrar un programa de doctorado con una buena orientación académica y afinidad investigadora en psicología del desarrollo o desarrollo infantil.</span><span class="cn">寻找在导师指导和研究方向上与发展心理学或儿童发展兴趣相契合的博士项目。</span></p>
         </article>
       </div>
     </div>
@@ -274,13 +281,13 @@
     <div class="container">
       <div class="contact-box">
         <div>
-          <h2><span class="en">Contact</span><span class="cn">联系我</span></h2>
-          <p class="en">I welcome academic connections and conversations about psychology research.</p>
+          <h2><span class="en">Contact</span><span class="es" lang="es">Contacto</span><span class="cn">联系我</span></h2>
+          <p class="en">I welcome academic connections and conversations about psychology research.</p><p class="es" lang="es">Me interesan los contactos académicos y las conversaciones sobre investigación en Psicología.</p>
           <p class="cn">欢迎与心理学研究相关的学术交流与联系。</p>
-          <p class="inline-cn en">Email and professional profile links can be added here when you are ready to publish them.</p>
+          <p class="inline-cn en">Email and professional profile links can be added here when you are ready to publish them.</p><p class="inline-cn es" lang="es">Aquí se pueden añadir un correo electrónico y enlaces a perfiles profesionales cuando estén listos para hacerse públicos.</p>
           <p class="inline-cn cn">准备公开联系方式后，可以在这里添加电子邮箱和职业社交主页链接。</p>
         </div>
-        <a class="button secondary" href="#top"><span class="en">Back to top ↑</span><span class="cn">返回顶部 ↑</span></a>
+        <a class="button secondary" href="#top"><span class="en">Back to top ↑</span><span class="es" lang="es">Volver al inicio ↑</span><span class="cn">返回顶部 ↑</span></a>
       </div>
     </div>
   </section>
@@ -289,19 +296,32 @@
 <footer>
   <div class="container footer-inner">
     <span>© <span id="year"></span> Honglin Zhu</span>
-    <span><span class="en">Academic profile · Personal website</span><span class="cn">学术主页 · 个人网站</span></span>
+    <span><span class="en">Academic profile · Personal website</span><span class="es" lang="es">Perfil académico · Sitio web personal</span><span class="cn">学术主页 · 个人网站</span></span>
   </div>
 </footer>
 <script>
-  const toggle = document.getElementById('langToggle');
-  let language = 'en';
-  toggle.addEventListener('click', () => {
-    language = language === 'en' ? 'cn' : 'en';
-    document.body.classList.toggle('show-en', language === 'en');
-    document.body.classList.toggle('show-cn', language === 'cn');
-    document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
-    toggle.textContent = language === 'en' ? '中文 / EN' : 'EN / 中文';
-  });
+  const languageSelect = document.getElementById('languageSelect');
+  const languageSettings = {
+    en: { className: 'show-en', htmlLang: 'en', title: 'Honglin Zhu | Academic Profile', description: 'Honglin Zhu — Psychology student, research interests in developmental psychology and child development.', navigation: 'Main navigation' },
+    zh: { className: 'show-cn', htmlLang: 'zh-CN', title: 'Honglin Zhu | 学术主页', description: 'Honglin Zhu — 心理学本科生，研究兴趣包括发展心理学与儿童发展。', navigation: '主导航' },
+    es: { className: 'show-es', htmlLang: 'es', title: 'Honglin Zhu | Perfil académico', description: 'Honglin Zhu — Estudiante de Psicología con interés en la psicología del desarrollo y el desarrollo infantil.', navigation: 'Navegación principal' }
+  };
+  function setLanguage(language) {
+    const selected = Object.hasOwn(languageSettings, language) ? language : 'en';
+    const settings = languageSettings[selected];
+    document.body.classList.remove('show-en', 'show-cn', 'show-es');
+    document.body.classList.add(settings.className);
+    document.documentElement.lang = settings.htmlLang;
+    document.title = settings.title;
+    document.querySelector('meta[name="description"]').content = settings.description;
+    document.querySelector('nav').setAttribute('aria-label', settings.navigation);
+    languageSelect.value = selected;
+    try { localStorage.setItem('preferredLanguage', selected); } catch {}
+  }
+  languageSelect.addEventListener('change', () => setLanguage(languageSelect.value));
+  let savedLanguage = 'en';
+  try { savedLanguage = localStorage.getItem('preferredLanguage') || 'en'; } catch {}
+  setLanguage(savedLanguage);
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
