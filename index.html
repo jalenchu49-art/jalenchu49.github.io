@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Honglin Zhu — Psychology student, research interests in developmental psychology and child development.">
+<title>Honglin Zhu | Academic Profile</title>
+<style>
+  :root {
+    --ink: #18212b;
+    --muted: #5e6a75;
+    --line: #e4e8ec;
+    --soft: #f6f8fa;
+    --accent: #315c78;
+    --accent-light: #eaf1f5;
+    --white: #fff;
+    --max: 1060px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--white); color: var(--ink);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+  header {
+    border-bottom: 1px solid var(--line); background: rgba(255,255,255,.94);
+    position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px);
+  }
+  .nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand { color: var(--ink); font-weight: 750; letter-spacing: -.03em; font-size: 1.03rem; white-space: nowrap; }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  nav { display: flex; gap: 20px; flex-wrap: wrap; }
+  nav a { font-size: .88rem; color: var(--muted); }
+  .lang-toggle {
+    border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px;
+    background: white; color: var(--ink); cursor: pointer; font: inherit; font-size: .82rem;
+  }
+  .hero { padding: 78px 0 66px; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(230px, .7fr); gap: 64px; align-items: center; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .13em; color: var(--accent); font-size: .76rem; font-weight: 750; }
+  h1 { font-size: clamp(2.5rem, 5vw, 4.3rem); line-height: 1.08; letter-spacing: -.055em; margin: 12px 0 18px; }
+  .hero-subtitle { font-size: 1.12rem; color: var(--muted); max-width: 650px; margin: 0 0 24px; }
+  .hero-cn { color: var(--muted); margin: 0 0 27px; max-width: 650px; }
+  .actions { display: flex; gap: 11px; flex-wrap: wrap; margin-top: 24px; }
+  .button { display: inline-flex; align-items: center; justify-content: center; padding: 11px 17px; border: 1px solid var(--accent); border-radius: 8px; font-weight: 650; font-size: .91rem; }
+  .button.primary { color: white; background: var(--accent); }
+  .button.secondary { color: var(--accent); background: white; }
+  .avatar-wrap { justify-self: end; width: min(100%, 280px); }
+  .avatar {
+    width: 100%; aspect-ratio: 4 / 4.7; border: 1px dashed #b8c5ce; border-radius: 18px;
+    background: linear-gradient(145deg, #f7f9fa, #eaf0f3); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center; color: #687986; padding: 22px;
+  }
+  .avatar svg { width: 86px; height: 86px; margin-bottom: 16px; color: #9aabb7; }
+  .avatar strong { color: #465866; font-size: .95rem; }
+  .avatar span { font-size: .78rem; margin-top: 5px; }
+  .hint { font-size: .77rem; color: #84909a; text-align: center; margin-top: 10px; }
+  section { padding: 58px 0; border-top: 1px solid var(--line); }
+  .section-head { display: grid; grid-template-columns: 210px 1fr; gap: 34px; margin-bottom: 28px; }
+  h2 { font-size: 1.55rem; letter-spacing: -.035em; margin: 0; line-height: 1.3; }
+  .section-cn { display: block; font-size: .87rem; color: var(--muted); font-weight: 450; margin-top: 7px; letter-spacing: 0; }
+  .section-intro { margin: 0; color: var(--muted); max-width: 700px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .panel { border: 1px solid var(--line); border-radius: 12px; padding: 22px; background: white; }
+  .panel h3 { margin: 0 0 8px; font-size: 1rem; }
+  .panel p { margin: 0; color: var(--muted); font-size: .93rem; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+  .tag { display: inline-block; border-radius: 999px; background: var(--accent-light); color: #2e5269; padding: 6px 11px; font-size: .82rem; }
+  .timeline { border-left: 1px solid #d7e0e6; margin-left: 5px; padding-left: 25px; }
+  .timeline-item { position: relative; padding-bottom: 26px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); left: -30px; top: 9px; }
+  .timeline-item h3 { margin: 0 0 5px; font-size: 1rem; }
+  .meta { color: var(--muted); font-size: .88rem; margin-bottom: 7px; }
+  .timeline-item p { color: var(--muted); margin: 0; font-size: .93rem; }
+  .note { border-left: 3px solid #9ab4c5; background: var(--soft); padding: 16px 18px; color: var(--muted); border-radius: 0 8px 8px 0; font-size: .9rem; margin-top: 20px; }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .skill-card { background: var(--soft); border-radius: 10px; padding: 18px; }
+  .skill-card h3 { margin: 0 0 8px; font-size: .95rem; }
+  .skill-card p { margin: 0; color: var(--muted); font-size: .88rem; }
+  .contact-box { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px; border: 1px solid var(--line); border-radius: 12px; }
+  .contact-box p { color: var(--muted); margin: 7px 0 0; }
+  footer { padding: 26px 0 36px; color: #7a858e; font-size: .8rem; }
+  .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+  .cn { display: none; }
+  body.show-cn .cn { display: block; }
+  body.show-cn .en { display: block; }
+  body.show-en .cn { display: none !important; }
+  body.show-en .en { display: block; }
+  .inline-cn { color: var(--muted); font-size: .88em; }
+  @media (max-width: 760px) {
+    .nav { padding: 14px 0; align-items: flex-start; }
+    .nav-right { gap: 10px; align-items: flex-end; flex-direction: column; }
+    nav { justify-content: flex-end; gap: 10px 14px; }
+    nav a { font-size: .8rem; }
+    .hero { padding: 52px 0 44px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+    .avatar-wrap { justify-self: start; width: 190px; }
+    .avatar { aspect-ratio: 1 / 1.05; }
+    .avatar svg { width: 60px; height: 60px; }
+    section { padding: 42px 0; }
+    .section-head { grid-template-columns: 1fr; gap: 12px; }
+    .two-col, .skills-grid { grid-template-columns: 1fr; }
+    .contact-box { align-items: flex-start; flex-direction: column; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  @media print {
+    header { position: static; }
+    .actions, .lang-toggle { display: none; }
+    section, .hero { padding: 24px 0; }
+    body { font-size: 11pt; }
+  }
+</style>
+</head>
+<body class="show-en">
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">Honglin Zhu<span style="color:var(--accent)">.</span></a>
+    <div class="nav-right">
+      <nav aria-label="Main navigation">
+        <a href="#about"><span class="en">About</span><span class="cn">关于我</span></a>
+        <a href="#research"><span class="en">Research</span><span class="cn">研究兴趣</span></a>
+        <a href="#experience"><span class="en">Experience</span><span class="cn">科研经历</span></a>
+        <a href="#skills"><span class="en">Skills</span><span class="cn">技能</span></a>
+        <a href="#contact"><span class="en">Contact</span><span class="cn">联系</span></a>
+      </nav>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">中文 / EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="container hero">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="en">Psychology · Research · Development</span><span class="cn">心理学 · 研究 · 发展</span></div>
+        <h1>Honglin Zhu</h1>
+        <p class="hero-subtitle en">Psychology undergraduate interested in understanding how children develop, learn, and interact with the world around them.</p>
+        <p class="hero-subtitle cn">心理学本科生，关注儿童如何发展、学习，以及如何与周围的世界互动。</p>
+        <p class="hero-cn en">I am building a foundation in psychological research and exploring opportunities to contribute to research teams before pursuing graduate study.</p>
+        <p class="hero-cn cn">我正在打好心理学研究基础，并希望在继续攻读研究生之前，积累研究团队协作与科研实践经验。</p>
+        <div class="actions">
+          <a class="button primary" href="#research"><span class="en">Explore research interests</span><span class="cn">了解研究兴趣</span></a>
+          <a class="button secondary" href="#contact"><span class="en">Get in touch</span><span class="cn">联系我</span></a>
+        </div>
+      </div>
+      <div class="avatar-wrap">
+        <div class="avatar" aria-label="Replaceable portrait placeholder">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <circle cx="50" cy="33" r="19" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M17 88c2-20 15-31 33-31s31 11 33 31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <strong><span class="en">Your portrait</span><span class="cn">个人照片</span></strong>
+          <span><span class="en">Replace this area with a photo</span><span class="cn">可在此处替换为个人照片</span></span>
+        </div>
+        <p class="hint"><span class="en">Portrait placeholder · replace anytime</span><span class="cn">头像占位区域 · 可随时替换</span></p>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2><span class="en">About Me</span><span class="cn">关于我</span><span class="section-cn">个人简介</span></h2>
+        <p class="section-intro en">I study psychology at Brigham Young University–Idaho. My current academic interests center on developmental psychology and child development. I am especially interested in learning how research questions are developed, how evidence is evaluated, and how findings can inform our understanding of human development.</p>
+        <p class="section-intro cn">我目前就读于杨百翰大学爱达荷分校（BYU–Idaho）心理学本科专业。我的学术兴趣主要集中在发展心理学与儿童发展。我希望进一步学习如何提出研究问题、评估研究证据，以及理解研究发现如何帮助我们认识人的发展过程。</p>
+      </div>
+      <div class="two-col">
+        <article class="panel">
+          <h3><span class="en">Education</span><span class="cn">教育背景</span></h3>
+          <p><strong>Brigham Young University–Idaho</strong><br><span class="en">Undergraduate study in Psychology</span><span class="cn">心理学本科在读</span></p>
+        </article>
+        <article class="panel">
+          <h3><span class="en">Long-term direction</span><span class="cn">长期发展方向</span></h3>
+          <p><span class="en">Build research experience, pursue a full-time research assistant opportunity, and prepare for doctoral study in psychology.</span><span class="cn">积累科研经验，争取全职研究助理机会，并为未来攻读心理学博士学位做准备。</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="container">
+      <div class="section-head">
+        <h2><span class="en">Research Interests</span><span class="cn">研究兴趣</span><span class="section-cn">希望深入探索的方向</span></h2>
+        <p class="section-intro en">I am interested in questions about development, learning, and social judgment. These are developing interests rather than a claim of specialization.</p>
+        <p class="section-intro cn">我对人的发展、学习以及社会判断相关问题感兴趣。目前这些是正在逐步发展的研究兴趣，并不代表我已经在这些领域形成专业专长。</p>
+      </div>
+      <div class="two-col">
+        <article class="panel">
+          <h3><span class="en">Developmental Psychology</span><span class="cn">发展心理学</span></h3>
+          <p><span class="en">How thinking, emotion, and behavior change across development.</span><span class="cn">思维、情绪和行为如何随着成长而变化。</span></p>
+        </article>
+        <article class="panel">
+          <h3><span class="en">Child Development</span><span class="cn">儿童发展</span></h3>
+          <p><span class="en">How children's experiences and environments shape learning and social development.</span><span class="cn">儿童的生活经历与成长环境如何影响学习和社会性发展。</span></p>
+        </article>
+        <article class="panel">
+          <h3><span class="en">Social Judgment</span><span class="cn">社会判断</span></h3>
+          <p><span class="en">How people form impressions and evaluate effort, work, and caregiving.</span><span class="cn">人们如何形成印象，并评价努力、工作与照护行为。</span></p>
+        </article>
+        <article class="panel">
+          <h3><span class="en">Research Methods</span><span class="cn">研究方法</span></h3>
+          <p><span class="en">Study design, measurement, replication, and interpretation of quantitative evidence.</span><span class="cn">研究设计、测量、重复研究，以及定量证据的解释。</span></p>
+        </article>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Developmental Psychology</span><span class="tag">Child Development</span>
+        <span class="tag">Research Methods</span><span class="tag">Quantitative Research</span><span class="tag">Replication</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <h2><span class="en">Research Experience</span><span class="cn">科研经历</span><span class="section-cn">研究训练与项目</span></h2>
+        <p class="section-intro en">The section below describes a research project in development. Update the details as the study progresses, and add confirmed dates, collaborators, and outputs when available.</p>
+        <p class="section-intro cn">以下内容介绍一个正在开展的研究项目。随着项目推进，可以补充已确认的时间、合作人员和成果。</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3><span class="en">Psychology Research Methods Project</span><span class="cn">心理学研究方法课程项目</span></h3>
+          <div class="meta"><span class="en">BYU–Idaho · Student research project</span><span class="cn">BYU–Idaho · 学生研究项目</span></div>
+          <p class="en">Developing a replication study based on research on gendered judgments of effort in work and caregiving contexts. The project involves understanding the original study, identifying measures, planning a survey, and considering appropriate quantitative analyses.</p>
+          <p class="cn">正在围绕工作与照护情境中对努力的性别化评价，设计一项基于既有研究的重复研究。项目涉及理解原始研究、查找测量工具、规划问卷，以及考虑合适的定量分析方法。</p>
+        </div>
+        <div class="timeline-item">
+          <h3><span class="en">Research Presentation — Planned</span><span class="cn">研究成果展示 — 计划中</span></h3>
+          <div class="meta"><span class="en">Rocky Mountain Psychological Association (RMPA) · 2027</span><span class="cn">落基山心理学会（RMPA）· 2027 年</span></div>
+          <p class="en">Planning to submit and present a research poster. Presentation status and final title should be updated after acceptance is confirmed.</p>
+          <p class="cn">计划提交并展示研究海报。请在收到录用确认后，再更新最终题目和展示状态。</p>
+        </div>
+      </div>
+      <div class="note"><strong><span class="en">Accuracy note</span><span class="cn">内容准确性说明</span></strong> — <span class="en">This page distinguishes current interests and plans from completed achievements. Only describe a conference presentation as accepted or presented once that status is confirmed.</span><span class="cn">本网页将当前兴趣和计划与已完成的成果区分开。只有在确认录用或实际展示后，才能将会议展示写为已录用或已完成。</span></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <h2><span class="en">Skills & Learning</span><span class="cn">技能与学习方向</span><span class="section-cn">持续发展的能力</span></h2>
+        <p class="section-intro en">A transparent snapshot of the methods and tools I am building familiarity with as I prepare for research work.</p>
+        <p class="section-intro cn">展示我为科研工作持续学习和熟悉的方法与工具。</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <h3><span class="en">Research Literacy</span><span class="cn">研究文献阅读</span></h3>
+          <p><span class="en">Reading empirical papers, identifying study variables, and understanding research design.</span><span class="cn">阅读实证研究论文、识别研究变量，并理解研究设计。</span></p>
+        </article>
+        <article class="skill-card">
+          <h3><span class="en">Survey Research</span><span class="cn">问卷研究</span></h3>
+          <p><span class="en">Learning survey construction and online study workflows using Qualtrics.</span><span class="cn">学习问卷设计，以及使用 Qualtrics 开展在线研究的流程。</span></p>
+        </article>
+        <article class="skill-card">
+          <h3><span class="en">Quantitative Analysis</span><span class="cn">定量分析</span></h3>
+          <p><span class="en">Developing familiarity with statistical reasoning and learning R for research.</span><span class="cn">逐步建立统计思维，并学习使用 R 进行科研分析。</span></p>
+        </article>
+      </div>
+      <p class="note"><span class="en">Please revise these descriptions to reflect your actual proficiency before using this page for applications.</span><span class="cn">在将网页用于正式申请前，请根据自己的实际熟练程度调整这些描述。</span></p>
+    </div>
+  </section>
+
+  <section id="goals">
+    <div class="container">
+      <div class="section-head">
+        <h2><span class="en">Graduate Study Goals</span><span class="cn">研究生阶段目标</span><span class="section-cn">未来规划</span></h2>
+        <p class="section-intro en">I hope to gain hands-on experience in a full-time research assistant role after completing my undergraduate degree, then pursue doctoral training in psychology. I am especially interested in programs and labs studying developmental psychology and child development.</p>
+        <p class="section-intro cn">本科毕业后，我希望通过全职研究助理工作积累实践经验，之后继续攻读心理学博士学位。我尤其关注研究发展心理学与儿童发展的项目和实验室。</p>
+      </div>
+      <div class="two-col">
+        <article class="panel">
+          <h3><span class="en">Near-term focus</span><span class="cn">近期重点</span></h3>
+          <p><span class="en">Strengthen research skills, contribute to a research team, and learn from experienced researchers.</span><span class="cn">加强研究技能、参与研究团队工作，并向有经验的研究者学习。</span></p>
+        </article>
+        <article class="panel">
+          <h3><span class="en">Long-term focus</span><span class="cn">长期重点</span></h3>
+          <p><span class="en">Find a doctoral program with strong mentorship and research fit in developmental psychology or child development.</span><span class="cn">寻找在导师指导和研究方向上与发展心理学或儿童发展兴趣相契合的博士项目。</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div>
+          <h2><span class="en">Contact</span><span class="cn">联系我</span></h2>
+          <p class="en">I welcome academic connections and conversations about psychology research.</p>
+          <p class="cn">欢迎与心理学研究相关的学术交流与联系。</p>
+          <p class="inline-cn en">Email and professional profile links can be added here when you are ready to publish them.</p>
+          <p class="inline-cn cn">准备公开联系方式后，可以在这里添加电子邮箱和职业社交主页链接。</p>
+        </div>
+        <a class="button secondary" href="#top"><span class="en">Back to top ↑</span><span class="cn">返回顶部 ↑</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Honglin Zhu</span>
+    <span><span class="en">Academic profile · Personal website</span><span class="cn">学术主页 · 个人网站</span></span>
+  </div>
+</footer>
+<script>
+  const toggle = document.getElementById('langToggle');
+  let language = 'en';
+  toggle.addEventListener('click', () => {
+    language = language === 'en' ? 'cn' : 'en';
+    document.body.classList.toggle('show-en', language === 'en');
+    document.body.classList.toggle('show-cn', language === 'cn');
+    document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
+    toggle.textContent = language === 'en' ? '中文 / EN' : 'EN / 中文';
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
