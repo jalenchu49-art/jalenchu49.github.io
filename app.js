@@ -42,7 +42,7 @@ es: {
 }
 };
 function setLanguage(language) {
- const lang = Object.hasOwn(translations, language) ? language : 'zh';
+ const lang = Object.hasOwn(translations, language) ? language : 'en';
  const text = translations[lang];
  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
  document.title = text.title;
@@ -53,8 +53,8 @@ function setLanguage(language) {
  document.querySelectorAll('[data-lang]').forEach(el => el.setAttribute('aria-pressed', String(el.dataset.lang === lang)));
  try { localStorage.setItem('honglin-profile-language', lang); } catch {}
 }
-let preferredLanguage = 'zh';
-try { preferredLanguage = localStorage.getItem('honglin-profile-language') || 'zh'; } catch {}
+let preferredLanguage = 'en';
+try { preferredLanguage = localStorage.getItem('honglin-profile-language') || 'en'; } catch {}
 setLanguage(preferredLanguage);
 document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
 document.getElementById('year').textContent = new Date().getFullYear();
