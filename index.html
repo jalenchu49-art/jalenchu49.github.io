@@ -1,338 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Honglin Zhu — Psychology student, research interests in developmental psychology and child development.">
-<title>Honglin Zhu | Academic Profile</title>
-<style>
-  :root {
-    --ink: #18212b;
-    --muted: #5e6a75;
-    --line: #e4e8ec;
-    --soft: #f6f8fa;
-    --accent: #315c78;
-    --accent-light: #eaf1f5;
-    --white: #fff;
-    --max: 1060px;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0; background: var(--white); color: var(--ink);
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-      "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    line-height: 1.7; -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .container { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
-  header {
-    border-bottom: 1px solid var(--line); background: rgba(255,255,255,.94);
-    position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px);
-  }
-  .nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-  .brand { color: var(--ink); font-weight: 750; letter-spacing: -.03em; font-size: 1.03rem; white-space: nowrap; }
-  .nav-right { display: flex; align-items: center; gap: 20px; }
-  nav { display: flex; gap: 20px; flex-wrap: wrap; }
-  nav a { font-size: .88rem; color: var(--muted); }
-  .lang-toggle {
-    border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px;
-    background: white; color: var(--ink); cursor: pointer; font: inherit; font-size: .82rem;
-  }
-  .hero { padding: 78px 0 66px; }
-  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(230px, .7fr); gap: 64px; align-items: center; }
-  .eyebrow { text-transform: uppercase; letter-spacing: .13em; color: var(--accent); font-size: .76rem; font-weight: 750; }
-  h1 { font-size: clamp(2.5rem, 5vw, 4.3rem); line-height: 1.08; letter-spacing: -.055em; margin: 12px 0 18px; }
-  .hero-subtitle { font-size: 1.12rem; color: var(--muted); max-width: 650px; margin: 0 0 24px; }
-  .hero-cn { color: var(--muted); margin: 0 0 27px; max-width: 650px; }
-  .actions { display: flex; gap: 11px; flex-wrap: wrap; margin-top: 24px; }
-  .button { display: inline-flex; align-items: center; justify-content: center; padding: 11px 17px; border: 1px solid var(--accent); border-radius: 8px; font-weight: 650; font-size: .91rem; }
-  .button.primary { color: white; background: var(--accent); }
-  .button.secondary { color: var(--accent); background: white; }
-  .avatar-wrap { justify-self: end; width: min(100%, 280px); }
-  .avatar {
-    display: block; width: 100%; height: auto;
-    border: 1px solid var(--line); border-radius: 18px;
-  }
-  section { padding: 58px 0; border-top: 1px solid var(--line); }
-  .section-head { display: grid; grid-template-columns: 210px 1fr; gap: 34px; margin-bottom: 28px; }
-  h2 { font-size: 1.55rem; letter-spacing: -.035em; margin: 0; line-height: 1.3; }
-  .section-cn { display: block; font-size: .87rem; color: var(--muted); font-weight: 450; margin-top: 7px; letter-spacing: 0; }
-  .section-intro { margin: 0; color: var(--muted); max-width: 700px; }
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  .panel { border: 1px solid var(--line); border-radius: 12px; padding: 22px; background: white; }
-  .panel h3 { margin: 0 0 8px; font-size: 1rem; }
-  .panel p { margin: 0; color: var(--muted); font-size: .93rem; }
-  .tag-list { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
-  .tag { display: inline-block; border-radius: 999px; background: var(--accent-light); color: #2e5269; padding: 6px 11px; font-size: .82rem; }
-  .timeline { border-left: 1px solid #d7e0e6; margin-left: 5px; padding-left: 25px; }
-  .timeline-item { position: relative; padding-bottom: 26px; }
-  .timeline-item:last-child { padding-bottom: 0; }
-  .timeline-item::before { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); left: -30px; top: 9px; }
-  .timeline-item h3 { margin: 0 0 5px; font-size: 1rem; }
-  .meta { color: var(--muted); font-size: .88rem; margin-bottom: 7px; }
-  .timeline-item p { color: var(--muted); margin: 0; font-size: .93rem; }
-  .note { border-left: 3px solid #9ab4c5; background: var(--soft); padding: 16px 18px; color: var(--muted); border-radius: 0 8px 8px 0; font-size: .9rem; margin-top: 20px; }
-  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .skill-card { background: var(--soft); border-radius: 10px; padding: 18px; }
-  .skill-card h3 { margin: 0 0 8px; font-size: .95rem; }
-  .skill-card p { margin: 0; color: var(--muted); font-size: .88rem; }
-  .contact-box { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px; border: 1px solid var(--line); border-radius: 12px; }
-  .contact-box p { color: var(--muted); margin: 7px 0 0; }
-  footer { padding: 26px 0 36px; color: #7a858e; font-size: .8rem; }
-  .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
-  .cn, .es { display: none; }
-  body.show-cn .en, body.show-es .en { display: none; }
-  body.show-cn .cn, body.show-es .es { display: revert; }
-  .section-cn { display: none; }
-  body.show-cn .section-cn { display: block; }
-  .language-label { font-size: .82rem; color: var(--muted); }
-  .inline-cn { color: var(--muted); font-size: .88em; }
-  @media (max-width: 760px) {
-    .nav { padding: 14px 0; align-items: flex-start; }
-    .nav-right { gap: 10px; align-items: flex-end; flex-direction: column; }
-    nav { justify-content: flex-end; gap: 10px 14px; }
-    nav a { font-size: .8rem; }
-    .hero { padding: 52px 0 44px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 30px; }
-    .avatar-wrap { justify-self: start; width: 190px; }
-    section { padding: 42px 0; }
-    .section-head { grid-template-columns: 1fr; gap: 12px; }
-    .two-col, .skills-grid { grid-template-columns: 1fr; }
-    .contact-box { align-items: flex-start; flex-direction: column; }
-  }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  @media print {
-    header { position: static; }
-    .actions, .lang-toggle { display: none; }
-    section, .hero { padding: 24px 0; }
-    body { font-size: 11pt; }
-  }
-</style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#263e35">
+<meta name="description" content="Honglin Zhu｜杨百翰大学心理学博士，关注抑郁症临床与青少年发展。个人简介、教育背景与联系方式。">
+<title>Honglin Zhu | 心理学博士</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
 </head>
-<body class="show-en">
-<header>
-  <div class="container nav">
-    <a class="brand" href="#top">Honglin Zhu<span style="color:var(--accent)">.</span></a>
-    <div class="nav-right">
-      <nav aria-label="Main navigation">
-        <a href="#about"><span class="en">About</span><span class="es" lang="es">Acerca de</span><span class="cn">关于我</span></a>
-        <a href="#research"><span class="en">Research</span><span class="es" lang="es">Investigación</span><span class="cn">研究兴趣</span></a>
-        <a href="#experience"><span class="en">Experience</span><span class="es" lang="es">Experiencia</span><span class="cn">科研经历</span></a>
-        <a href="#skills"><span class="en">Skills</span><span class="es" lang="es">Habilidades</span><span class="cn">技能</span></a>
-        <a href="#contact"><span class="en">Contact</span><span class="es" lang="es">Contacto</span><span class="cn">联系</span></a>
-      </nav>
-      <label class="language-label" for="languageSelect">Language / 语言 / Idioma
-        <select class="lang-toggle" id="languageSelect">
-          <option value="en" lang="en">English</option>
-          <option value="zh" lang="zh-CN">中文</option>
-          <option value="es" lang="es">Español</option>
-        </select>
-      </label>
-    </div>
-  </div>
-</header>
-
-<main id="top">
-  <div class="container hero">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow"><span class="en">Psychology · Research · Development</span><span class="es" lang="es">Psicología · Investigación · Desarrollo</span><span class="cn">心理学 · 研究 · 发展</span></div>
-        <h1>Honglin Zhu</h1>
-        <p class="hero-subtitle en">Psychology undergraduate interested in understanding how children develop, learn, and interact with the world around them.</p><p class="hero-subtitle es" lang="es">Estudiante de grado en Psicología con interés en comprender cómo se desarrollan los niños, cómo aprenden y cómo interactúan con el mundo que los rodea.</p>
-        <p class="hero-subtitle cn">心理学本科生，关注儿童如何发展、学习，以及如何与周围的世界互动。</p>
-        <p class="hero-cn en">I am building a foundation in psychological research and exploring opportunities to contribute to research teams before pursuing graduate study.</p><p class="hero-cn es" lang="es">Estoy construyendo una base en investigación psicológica y explorando oportunidades para contribuir a equipos de investigación antes de realizar estudios de posgrado.</p>
-        <p class="hero-cn cn">我正在打好心理学研究基础，并希望在继续攻读研究生之前，积累研究团队协作与科研实践经验。</p>
-        <div class="actions">
-          <a class="button primary" href="#research"><span class="en">Explore research interests</span><span class="es" lang="es">Explorar intereses de investigación</span><span class="cn">了解研究兴趣</span></a>
-          <a class="button secondary" href="#contact"><span class="en">Get in touch</span><span class="es" lang="es">Contactar</span><span class="cn">联系我</span></a>
-        </div>
-      </div>
-      <div class="avatar-wrap">
-        <img class="avatar" src="portrait.png" alt="Honglin Zhu" width="1024" height="1536" fetchpriority="high">
-      </div>
-    </div>
-  </div>
-
-  <section id="about">
-    <div class="container">
-      <div class="section-head">
-        <h2><span class="en">About Me</span><span class="es" lang="es">Sobre mí</span><span class="cn">关于我</span><span class="section-cn">个人简介</span></h2>
-        <p class="section-intro en">I study psychology at Brigham Young University–Idaho. My current academic interests center on developmental psychology and child development. I am especially interested in learning how research questions are developed, how evidence is evaluated, and how findings can inform our understanding of human development.</p><p class="section-intro es" lang="es">Estudio Psicología en Brigham Young University–Idaho. Mis intereses académicos actuales se centran en la psicología del desarrollo y el desarrollo infantil. Me interesa especialmente aprender cómo se formulan las preguntas de investigación, cómo se evalúa la evidencia y cómo los hallazgos pueden ayudarnos a comprender el desarrollo humano.</p>
-        <p class="section-intro cn">我目前就读于杨百翰大学爱达荷分校（BYU–Idaho）心理学本科专业。我的学术兴趣主要集中在发展心理学与儿童发展。我希望进一步学习如何提出研究问题、评估研究证据，以及理解研究发现如何帮助我们认识人的发展过程。</p>
-      </div>
-      <div class="two-col">
-        <article class="panel">
-          <h3><span class="en">Education</span><span class="es" lang="es">Formación académica</span><span class="cn">教育背景</span></h3>
-          <p><strong>Brigham Young University–Idaho</strong><br><span class="en">Undergraduate study in Psychology</span><span class="es" lang="es">Estudios de grado en Psicología</span><span class="cn">心理学本科在读</span></p>
-        </article>
-        <article class="panel">
-          <h3><span class="en">Long-term direction</span><span class="es" lang="es">Orientación a largo plazo</span><span class="cn">长期发展方向</span></h3>
-          <p><span class="en">Build research experience, pursue a full-time research assistant opportunity, and prepare for doctoral study in psychology.</span><span class="es" lang="es">Adquirir experiencia en investigación, buscar una oportunidad como asistente de investigación a tiempo completo y prepararme para un doctorado en Psicología.</span><span class="cn">积累科研经验，争取全职研究助理机会，并为未来攻读心理学博士学位做准备。</span></p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="research">
-    <div class="container">
-      <div class="section-head">
-        <h2><span class="en">Research Interests</span><span class="es" lang="es">Intereses de investigación</span><span class="cn">研究兴趣</span><span class="section-cn">希望深入探索的方向</span></h2>
-        <p class="section-intro en">I am interested in questions about development, learning, and social judgment. These are developing interests rather than a claim of specialization.</p><p class="section-intro es" lang="es">Me interesan las preguntas sobre el desarrollo, el aprendizaje y el juicio social. Son intereses en formación, no una afirmación de especialización.</p>
-        <p class="section-intro cn">我对人的发展、学习以及社会判断相关问题感兴趣。目前这些是正在逐步发展的研究兴趣，并不代表我已经在这些领域形成专业专长。</p>
-      </div>
-      <div class="two-col">
-        <article class="panel">
-          <h3><span class="en">Developmental Psychology</span><span class="es" lang="es">Psicología del desarrollo</span><span class="cn">发展心理学</span></h3>
-          <p><span class="en">How thinking, emotion, and behavior change across development.</span><span class="es" lang="es">Cómo cambian el pensamiento, las emociones y la conducta a lo largo del desarrollo.</span><span class="cn">思维、情绪和行为如何随着成长而变化。</span></p>
-        </article>
-        <article class="panel">
-          <h3><span class="en">Child Development</span><span class="es" lang="es">Desarrollo infantil</span><span class="cn">儿童发展</span></h3>
-          <p><span class="en">How children's experiences and environments shape learning and social development.</span><span class="es" lang="es">Cómo las experiencias y los entornos de los niños influyen en el aprendizaje y el desarrollo social.</span><span class="cn">儿童的生活经历与成长环境如何影响学习和社会性发展。</span></p>
-        </article>
-        <article class="panel">
-          <h3><span class="en">Social Judgment</span><span class="es" lang="es">Juicio social</span><span class="cn">社会判断</span></h3>
-          <p><span class="en">How people form impressions and evaluate effort, work, and caregiving.</span><span class="es" lang="es">Cómo las personas se forman impresiones y evalúan el esfuerzo, el trabajo y los cuidados.</span><span class="cn">人们如何形成印象，并评价努力、工作与照护行为。</span></p>
-        </article>
-        <article class="panel">
-          <h3><span class="en">Research Methods</span><span class="es" lang="es">Métodos de investigación</span><span class="cn">研究方法</span></h3>
-          <p><span class="en">Study design, measurement, replication, and interpretation of quantitative evidence.</span><span class="es" lang="es">Diseño de estudios, medición, replicación e interpretación de evidencia cuantitativa.</span><span class="cn">研究设计、测量、重复研究，以及定量证据的解释。</span></p>
-        </article>
-      </div>
-      <div class="tag-list">
-        <span class="tag"><span class="en">Developmental Psychology</span><span class="cn">Developmental Psychology</span><span class="es" lang="es">Psicología del desarrollo</span></span><span class="tag"><span class="en">Child Development</span><span class="cn">Child Development</span><span class="es" lang="es">Desarrollo infantil</span></span>
-        <span class="tag"><span class="en">Research Methods</span><span class="cn">Research Methods</span><span class="es" lang="es">Métodos de investigación</span></span><span class="tag"><span class="en">Quantitative Research</span><span class="cn">Quantitative Research</span><span class="es" lang="es">Investigación cuantitativa</span></span><span class="tag"><span class="en">Replication</span><span class="cn">Replication</span><span class="es" lang="es">Replicación</span></span>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="container">
-      <div class="section-head">
-        <h2><span class="en">Research Experience</span><span class="es" lang="es">Experiencia en investigación</span><span class="cn">科研经历</span><span class="section-cn">研究训练与项目</span></h2>
-        <p class="section-intro en">The section below describes a research project in development. Update the details as the study progresses, and add confirmed dates, collaborators, and outputs when available.</p><p class="section-intro es" lang="es">La siguiente sección describe un proyecto de investigación en desarrollo. Los detalles se actualizarán a medida que avance el estudio, con fechas, colaboradores y resultados confirmados cuando estén disponibles.</p>
-        <p class="section-intro cn">以下内容介绍一个正在开展的研究项目。随着项目推进，可以补充已确认的时间、合作人员和成果。</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h3><span class="en">Psychology Research Methods Project</span><span class="es" lang="es">Proyecto de métodos de investigación en Psicología</span><span class="cn">心理学研究方法课程项目</span></h3>
-          <div class="meta"><span class="en">BYU–Idaho · Student research project</span><span class="es" lang="es">BYU–Idaho · Proyecto de investigación estudiantil</span><span class="cn">BYU–Idaho · 学生研究项目</span></div>
-          <p class="en">Developing a replication study based on research on gendered judgments of effort in work and caregiving contexts. The project involves understanding the original study, identifying measures, planning a survey, and considering appropriate quantitative analyses.</p><p class="es" lang="es">Estoy desarrollando un estudio de replicación basado en investigaciones sobre los juicios de género acerca del esfuerzo en contextos laborales y de cuidados. El proyecto implica comprender el estudio original, identificar medidas, planificar una encuesta y considerar los análisis cuantitativos adecuados.</p>
-          <p class="cn">正在围绕工作与照护情境中对努力的性别化评价，设计一项基于既有研究的重复研究。项目涉及理解原始研究、查找测量工具、规划问卷，以及考虑合适的定量分析方法。</p>
-        </div>
-        <div class="timeline-item">
-          <h3><span class="en">Research Presentation — Planned</span><span class="es" lang="es">Presentación de investigación — Prevista</span><span class="cn">研究成果展示 — 计划中</span></h3>
-          <div class="meta"><span class="en">Rocky Mountain Psychological Association (RMPA) · 2027</span><span class="es" lang="es">Rocky Mountain Psychological Association (RMPA) · 2027</span><span class="cn">落基山心理学会（RMPA）· 2027 年</span></div>
-          <p class="en">Planning to submit and present a research poster. Presentation status and final title should be updated after acceptance is confirmed.</p><p class="es" lang="es">Tengo previsto enviar y presentar un póster de investigación. El estado de la presentación y el título definitivo se actualizarán una vez confirmada su aceptación.</p>
-          <p class="cn">计划提交并展示研究海报。请在收到录用确认后，再更新最终题目和展示状态。</p>
-        </div>
-      </div>
-      <div class="note"><strong><span class="en">Accuracy note</span><span class="es" lang="es">Nota sobre la exactitud</span><span class="cn">内容准确性说明</span></strong> — <span class="en">This page distinguishes current interests and plans from completed achievements. Only describe a conference presentation as accepted or presented once that status is confirmed.</span><span class="es" lang="es">Esta página distingue los intereses y planes actuales de los logros ya alcanzados. Una presentación en un congreso solo debe describirse como aceptada o realizada cuando ese estado esté confirmado.</span><span class="cn">本网页将当前兴趣和计划与已完成的成果区分开。只有在确认录用或实际展示后，才能将会议展示写为已录用或已完成。</span></div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="container">
-      <div class="section-head">
-        <h2><span class="en">Skills & Learning</span><span class="es" lang="es">Habilidades y aprendizaje</span><span class="cn">技能与学习方向</span><span class="section-cn">持续发展的能力</span></h2>
-        <p class="section-intro en">A transparent snapshot of the methods and tools I am building familiarity with as I prepare for research work.</p><p class="section-intro es" lang="es">Una descripción transparente de los métodos y herramientas con los que me estoy familiarizando mientras me preparo para trabajar en investigación.</p>
-        <p class="section-intro cn">展示我为科研工作持续学习和熟悉的方法与工具。</p>
-      </div>
-      <div class="skills-grid">
-        <article class="skill-card">
-          <h3><span class="en">Research Literacy</span><span class="es" lang="es">Lectura de literatura científica</span><span class="cn">研究文献阅读</span></h3>
-          <p><span class="en">Reading empirical papers, identifying study variables, and understanding research design.</span><span class="es" lang="es">Lectura de artículos empíricos, identificación de variables y comprensión del diseño de investigación.</span><span class="cn">阅读实证研究论文、识别研究变量，并理解研究设计。</span></p>
-        </article>
-        <article class="skill-card">
-          <h3><span class="en">Survey Research</span><span class="es" lang="es">Investigación mediante encuestas</span><span class="cn">问卷研究</span></h3>
-          <p><span class="en">Learning survey construction and online study workflows using Qualtrics.</span><span class="es" lang="es">Aprendizaje del diseño de encuestas y de los procesos de investigación en línea con Qualtrics.</span><span class="cn">学习问卷设计，以及使用 Qualtrics 开展在线研究的流程。</span></p>
-        </article>
-        <article class="skill-card">
-          <h3><span class="en">Quantitative Analysis</span><span class="es" lang="es">Análisis cuantitativo</span><span class="cn">定量分析</span></h3>
-          <p><span class="en">Developing familiarity with statistical reasoning and learning R for research.</span><span class="es" lang="es">Desarrollo del razonamiento estadístico y aprendizaje de R para la investigación.</span><span class="cn">逐步建立统计思维，并学习使用 R 进行科研分析。</span></p>
-        </article>
-      </div>
-      <p class="note"><span class="en">Please revise these descriptions to reflect your actual proficiency before using this page for applications.</span><span class="es" lang="es">Estas descripciones deben ajustarse al nivel real de dominio antes de utilizar esta página en solicitudes académicas o profesionales.</span><span class="cn">在将网页用于正式申请前，请根据自己的实际熟练程度调整这些描述。</span></p>
-    </div>
-  </section>
-
-  <section id="goals">
-    <div class="container">
-      <div class="section-head">
-        <h2><span class="en">Graduate Study Goals</span><span class="es" lang="es">Objetivos de posgrado</span><span class="cn">研究生阶段目标</span><span class="section-cn">未来规划</span></h2>
-        <p class="section-intro en">I hope to gain hands-on experience in a full-time research assistant role after completing my undergraduate degree, then pursue doctoral training in psychology. I am especially interested in programs and labs studying developmental psychology and child development.</p><p class="section-intro es" lang="es">Espero adquirir experiencia práctica como asistente de investigación a tiempo completo tras finalizar mis estudios de grado y, posteriormente, realizar un doctorado en Psicología. Me interesan especialmente los programas y laboratorios que estudian la psicología del desarrollo y el desarrollo infantil.</p>
-        <p class="section-intro cn">本科毕业后，我希望通过全职研究助理工作积累实践经验，之后继续攻读心理学博士学位。我尤其关注研究发展心理学与儿童发展的项目和实验室。</p>
-      </div>
-      <div class="two-col">
-        <article class="panel">
-          <h3><span class="en">Near-term focus</span><span class="es" lang="es">Objetivos a corto plazo</span><span class="cn">近期重点</span></h3>
-          <p><span class="en">Strengthen research skills, contribute to a research team, and learn from experienced researchers.</span><span class="es" lang="es">Fortalecer mis habilidades de investigación, contribuir a un equipo y aprender de investigadores con experiencia.</span><span class="cn">加强研究技能、参与研究团队工作，并向有经验的研究者学习。</span></p>
-        </article>
-        <article class="panel">
-          <h3><span class="en">Long-term focus</span><span class="es" lang="es">Objetivos a largo plazo</span><span class="cn">长期重点</span></h3>
-          <p><span class="en">Find a doctoral program with strong mentorship and research fit in developmental psychology or child development.</span><span class="es" lang="es">Encontrar un programa de doctorado con una buena orientación académica y afinidad investigadora en psicología del desarrollo o desarrollo infantil.</span><span class="cn">寻找在导师指导和研究方向上与发展心理学或儿童发展兴趣相契合的博士项目。</span></p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="contact-box">
-        <div>
-          <h2><span class="en">Contact</span><span class="es" lang="es">Contacto</span><span class="cn">联系我</span></h2>
-          <p class="en">I welcome academic connections and conversations about psychology research.</p><p class="es" lang="es">Me interesan los contactos académicos y las conversaciones sobre investigación en Psicología.</p>
-          <p class="cn">欢迎与心理学研究相关的学术交流与联系。</p>
-          <p><strong><span class="en">Email</span><span class="es" lang="es">Correo electrónico</span><span class="cn">邮箱</span>:</strong><br>
-            <a href="mailto:jalenchu49@gmail.com">jalenchu49@gmail.com</a><br>
-            <a href="mailto:zhu23003@byui.edu">zhu23003@byui.edu</a>
-          </p>
-          <p><strong><span class="en">Phone</span><span class="es" lang="es">Teléfono</span><span class="cn">电话</span>:</strong><br>
-            <a href="tel:+8613769554055">+86 13769554055</a><br>
-            <span class="en">Mainland China, Hong Kong, Macau, Taiwan</span><span class="es" lang="es">China continental, Hong Kong, Macao, Taiwán</span><span class="cn">中国大陆、香港、澳门、台湾</span>
-          </p>
-          <p>
-            <a href="tel:+12538024669">+1 2538024669</a><br>
-            <span class="en">United States, Canada</span><span class="es" lang="es">Estados Unidos, Canadá</span><span class="cn">美国、加拿大</span>
-          </p>
-        </div>
-        <a class="button secondary" href="#top"><span class="en">Back to top ↑</span><span class="es" lang="es">Volver al inicio ↑</span><span class="cn">返回顶部 ↑</span></a>
-      </div>
-    </div>
-  </section>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">跳转至正文</a>
+<header class="site-header"><div class="container header-inner">
+<a class="brand" href="#home" aria-label="Honglin Zhu"><span class="monogram">HZ<span>·</span></span><span class="brand-name">Honglin Zhu</span></a>
+<nav aria-label="主导航" data-label="navLabel"><a href="#about" data-i18n="navAbout">个人简介</a><a href="#focus" data-i18n="navFocus">专业领域</a><a href="#education" data-i18n="navEducation">教育背景</a><a href="#contact" data-i18n="navContact">联系</a></nav>
+<div class="languages" role="group" aria-label="选择语言 / Choose language / Elegir idioma"><button type="button" data-lang="zh" lang="zh-CN" aria-pressed="true">中文</button><button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button><button type="button" data-lang="es" lang="es" aria-pressed="false">ES</button></div>
+</div></header>
+<main id="main">
+<aside class="statement"><div class="container"><p class="eyebrow" data-i18n="statementLabel">我们的立场</p><p data-i18n="statement">我们谴责任何形式的种族不公、种族主义、偏见和仇恨。我们与美国心理协会在这些问题上的立场一致，并认为作为心理学家，我们有责任支持受种族不公影响的人们，研究可能的解决方案，并教育他人以促进变革。</p></div></aside>
+<div class="container hero" id="home"><div class="hero-copy">
+<p class="eyebrow"><span class="small-line"></span><span data-i18n="eyebrow">心理学 · 人的发展与成长</span></p>
+<h1><span data-i18n="name">朱红林博士</span><span class="degree" data-i18n="nameSub">Dr. Honglin Zhu, Ph.D.</span></h1><p class="roles" data-i18n="roles">心理学家｜心理学研究者｜定量数据分析</p>
+<p class="hero-title" data-i18n="heroTitle">理解内心，关注成长。</p>
+<p class="hero-description" data-i18n="heroDescription">杨百翰大学心理学博士，关注抑郁症临床与青少年发展，探索情绪、成长环境与心理健康之间的联系。</p>
+<div class="hero-actions"><a class="button" href="#contact"><span data-i18n="getInTouch">与我联系</span><span aria-hidden="true">↗</span></a><a class="text-link" href="#focus"><span data-i18n="explore">了解专业领域</span><span aria-hidden="true">↓</span></a></div>
+<div class="hero-credential"><span class="credential-icon" aria-hidden="true">✳</span><div><span data-i18n="credential">心理学博士 · 2026</span><small data-i18n="university">杨百翰大学 · 美国</small></div></div>
+</div><figure class="portrait-frame"><div class="photo-outline" aria-hidden="true"></div><img src="portrait.png" width="1024" height="1536" alt="Honglin Zhu 的个人肖像" data-alt="portraitAlt" fetchpriority="high"><figcaption><span>HONGLIN ZHU</span><span data-i18n="portraitCaption">个人学术主页</span></figcaption></figure></div>
+<div class="field-strip"><div class="container"><span data-i18n="stripOne">心理学</span><span aria-hidden="true">✳</span><span data-i18n="stripTwo">抑郁症临床</span><span aria-hidden="true">✳</span><span data-i18n="stripThree">青少年发展</span></div></div>
+<section class="container section about" id="about"><div class="section-heading"><p class="eyebrow" data-i18n="aboutLabel">01 / 个人简介</p><h2 data-i18n="aboutTitle">以理解为起点。</h2></div><div class="about-content"><p class="large-copy" data-i18n="aboutLead">以心理学理论与定量研究，理解人类行为。</p><p data-i18n="bio1"></p><p data-i18n="bio2"></p><p data-i18n="bio3"></p><p data-i18n="bio4"></p><p data-i18n="bio5"></p><p data-i18n="bio6"></p><p data-i18n="bio7"></p></div></section>
+<section class="focus-section" id="focus"><div class="container section"><div class="section-top"><div class="section-heading"><p class="eyebrow" data-i18n="focusLabel">02 / 专业领域</p><h2 data-i18n="focusTitle">关注情绪，也关注成长。</h2></div><p class="section-note" data-i18n="focusNote">从个体的情绪体验，到成长中的环境与关系。</p></div><div class="focus-grid">
+<article class="focus-card"><div class="card-top"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M6 25h9l5-13 8 25 5-12h9M10 8h28M10 42h28"/></svg><span>01</span></div><h3 data-i18n="depressionTitle">抑郁症临床</h3><p data-i18n="depressionBody">关注抑郁症的情绪与认知体验，以及影响心理健康的个体和环境因素。</p><span class="card-tag" data-i18n="depressionTag">情绪 · 认知 · 心理健康</span></article>
+<article class="focus-card"><div class="card-top"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 43V23M24 32C9 33 6 23 7 15c11-1 17 5 17 17ZM24 24c0-12 6-18 17-18 0 11-6 18-17 18Z"/></svg><span>02</span></div><h3 data-i18n="adolescentTitle">青少年发展</h3><p data-i18n="adolescentBody">关注青春期的情绪发展、自我认同，以及家庭、同伴与成长环境的影响。</p><span class="card-tag" data-i18n="adolescentTag">成长 · 关系 · 发展</span></article>
+</div><div class="research-directions"><h3 data-i18n="researchHeading">研究领域</h3><ul><li data-i18n="research1"></li><li data-i18n="research2"></li><li data-i18n="research3"></li><li data-i18n="research4"></li><li data-i18n="research5"></li><li data-i18n="research6"></li></ul></div></div></section>
+<section class="container section education" id="education"><div class="section-heading"><p class="eyebrow" data-i18n="educationLabel">03 / 教育背景</p><h2 data-i18n="educationTitle">学术之路。</h2></div><div class="timeline">
+<article class="education-item"><span class="year">2026</span><div><span class="education-tag" data-i18n="doctoralTag">博士学位</span><h3 data-i18n="doctoralDegree">心理学博士</h3><p data-i18n="doctoralSchool">杨百翰大学 · 美国</p></div><span class="education-mark" aria-hidden="true">↗</span></article>
+<article class="education-item"><span class="year">2025</span><div><span class="education-tag" data-i18n="bachelorTag">本科学位</span><h3 data-i18n="bachelorDegree">学士学位</h3><p data-i18n="bachelorNote">杨百翰大学爱达荷分校</p></div><span class="education-mark" aria-hidden="true">↗</span></article>
+</div></section>
+<section class="contact-section" id="contact"><div class="container section"><div class="contact-intro"><p class="eyebrow" data-i18n="contactLabel">04 / 联系方式</p><h2 data-i18n="contactTitle">让交流，从这里开始。</h2><p data-i18n="contactIntro">欢迎就心理学、学术研究与合作事宜与我联系。</p></div><div class="contact-grid">
+<div class="contact-card"><span class="contact-type" data-i18n="emailLabel">电子邮箱</span><a href="mailto:jalenchu49@gmail.com">jalenchu49@gmail.com <span aria-hidden="true">↗</span></a><a href="mailto:zhu23003@byui.edu">zhu23003@byui.edu <span aria-hidden="true">↗</span></a></div>
+<div class="contact-card"><span class="contact-type" data-i18n="asiaLabel">中国大陆、香港、澳门、台湾</span><a href="tel:+8613769554055">+86 137 6955 4055 <span aria-hidden="true">↗</span></a><span class="contact-type region" data-i18n="americaLabel">美国、加拿大</span><a href="tel:+12538024669">+1 253 802 4669 <span aria-hidden="true">↗</span></a></div>
+</div></div></section>
 </main>
-
-<footer>
-  <div class="container footer-inner">
-    <span>© <span id="year"></span> Honglin Zhu</span>
-    <span><span class="en">Academic profile · Personal website</span><span class="es" lang="es">Perfil académico · Sitio web personal</span><span class="cn">学术主页 · 个人网站</span></span>
-  </div>
-</footer>
-<script>
-  const languageSelect = document.getElementById('languageSelect');
-  const languageSettings = {
-    en: { className: 'show-en', htmlLang: 'en', title: 'Honglin Zhu | Academic Profile', description: 'Honglin Zhu — Psychology student, research interests in developmental psychology and child development.', navigation: 'Main navigation' },
-    zh: { className: 'show-cn', htmlLang: 'zh-CN', title: 'Honglin Zhu | 学术主页', description: 'Honglin Zhu — 心理学本科生，研究兴趣包括发展心理学与儿童发展。', navigation: '主导航' },
-    es: { className: 'show-es', htmlLang: 'es', title: 'Honglin Zhu | Perfil académico', description: 'Honglin Zhu — Estudiante de Psicología con interés en la psicología del desarrollo y el desarrollo infantil.', navigation: 'Navegación principal' }
-  };
-  function setLanguage(language) {
-    const selected = Object.hasOwn(languageSettings, language) ? language : 'en';
-    const settings = languageSettings[selected];
-    document.body.classList.remove('show-en', 'show-cn', 'show-es');
-    document.body.classList.add(settings.className);
-    document.documentElement.lang = settings.htmlLang;
-    document.title = settings.title;
-    document.querySelector('meta[name="description"]').content = settings.description;
-    document.querySelector('nav').setAttribute('aria-label', settings.navigation);
-    languageSelect.value = selected;
-    try { localStorage.setItem('preferredLanguage', selected); } catch {}
-  }
-  languageSelect.addEventListener('change', () => setLanguage(languageSelect.value));
-  let savedLanguage = 'en';
-  try { savedLanguage = localStorage.getItem('preferredLanguage') || 'en'; } catch {}
-  setLanguage(savedLanguage);
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
+<footer><div class="container footer-inner"><a class="footer-name" href="#home" data-i18n="footerName">朱红林博士 · Ph.D.</a><p>© <span id="year">2026</span> Honglin Zhu. <span data-i18n="rights">保留所有权利。</span></p><a href="#home" class="back-top"><span data-i18n="backTop">返回顶部</span> ↑</a></div></footer>
+<noscript><p class="noscript">语言切换需要 JavaScript。Language switching requires JavaScript. Para cambiar de idioma, activa JavaScript.</p></noscript>
+</body></html>
