@@ -13,3 +13,5 @@
 .statement .eyebrow{color:#b4232d;font-size:26px;font-weight:800;letter-spacing:.025em}
 .statement p:last-child{color:#9f202b;font-size:16px;font-weight:550;line-height:1.9}
 @media(max-width:650px){.statement{padding-block:22px}.statement .eyebrow{font-size:24px}.statement p:last-child{font-size:15px}}
+
+.submission-notice{margin-top:28px;padding:24px 28px;border-left:3px solid #c4ab7d;background:#ffffff08}.submission-notice h3{font-size:17px;font-weight:650;margin:0 0 12px;color:#f5e4c5}.contact-intro .submission-notice p:last-child{color:#edf0e9;font-size:15px;line-height:1.95;margin:0;max-width:1000px}@media(max-width:650px){.submission-notice{padding:20px;margin-top:24px}.contact-intro .submission-notice p:last-child{font-size:14px}}
