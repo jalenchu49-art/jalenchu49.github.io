@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="在路上：收集旅行中的片刻，分享路线、预算与实用攻略。">
+  <title>在路上 · Jalen 的旅行手记</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header"><a class="brand" href="#home"><span class="brand-mark">↗</span>在路上<span class="brand-en">ON THE WAY</span></a><nav aria-label="主导航"><a href="#stories">旅行手记</a><a href="#guides">实用攻略</a><a href="#about">关于这里</a></nav><a class="header-link" href="../">学术主页 ↗</a></header>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow"><span></span> JALEN'S TRAVEL JOURNAL</p><h1>走远一点，<br>让世界<span>近一点。</span></h1><p class="intro">把风景留在相册，把故事写在这里。<br>记录旅途里的小小发现，也分享出发前想知道的事。</p><a class="button primary" href="#stories">翻开旅行手记 <span>↗</span></a><div class="hero-note"><span class="note-line"></span>慢慢走，认真看，好好记录。</div></div>
+      <div class="hero-art"><div id="hero-landscape" aria-label="山间湖泊与公路的旅行插画" role="img"></div><div class="art-caption"><span>THE NEXT CHAPTER IS OUT THERE.</span><span>风景插画 / 非旅行实拍</span></div><div class="floating-note">去山野，去海边，<br>去生活的另一面。<span>✳</span></div></div>
+    </section>
+    <div class="notice"><span>✳</span><p><strong>40 个目的地，5 个地区</strong> · 目录已按你提供的目的地建立；真实游记、照片与具体行程待补充。当前配图为风景插画。</p></div>
+    <section class="stories section" id="stories"><div class="section-heading"><div><p class="eyebrow">PLACES & STORIES</p><h2>每一次出发，都值得记下。</h2></div><span class="section-aside">目的地是起点，故事才是旅程。</span></div><div class="toolbar"><div class="filters" role="group" aria-label="目的地筛选"><button class="filter active" data-region="all" aria-pressed="true">全部目的地</button><button class="filter" data-region="asia" aria-pressed="false">亚洲</button><button class="filter" data-region="africa" aria-pressed="false">非洲</button><button class="filter" data-region="europe" aria-pressed="false">欧洲</button><button class="filter" data-region="oceania" aria-pressed="false">大洋洲</button><button class="filter" data-region="america" aria-pressed="false">美洲</button><button class="filter" data-region="saved" aria-pressed="false">我的收藏 <span id="saved-count">0</span></button></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索目的地、关键词" aria-label="搜索目的地或关键词"></label></div><p id="results-count" class="results-count" aria-live="polite"></p><div class="cards" id="story-grid"></div><div class="more-wrap"><button class="button" id="show-more">展开更多目的地 ↓</button></div><div class="empty" id="empty" hidden><span>⌁</span><h3>这里还没有旅行故事</h3><p>试试其他关键词，或收藏一篇感兴趣的手记。</p><button class="button" id="reset">查看全部目的地</button></div></section>
+    <section class="guide-section section" id="guides"><div class="section-heading"><div><p class="eyebrow">BEFORE YOU GO</p><h2>少一点慌张，多一点从容。</h2></div><span class="section-aside">给下一次出发的实用备忘。</span></div><div class="guide-grid"><button class="guide" data-guide="planning"><span class="guide-icon">↗</span><span class="guide-number">01 / PLAN</span><h3>把行程安排得刚刚好</h3><p>路线怎么串联？每天留多少空白？<br>从一张地图开始规划你的旅程。</p><span class="guide-more">查看规划清单 ↗</span></button><button class="guide" data-guide="budget"><span class="guide-icon">◎</span><span class="guide-number">02 / BUDGET</span><h3>让预算花在喜欢的地方</h3><p>交通、住宿、餐饮和机动费用，<br>出发前先算一笔清楚的账。</p><span class="guide-more">查看预算建议 ↗</span></button><button class="guide" data-guide="packing"><span class="guide-icon">▧</span><span class="guide-number">03 / PACK</span><h3>轻装出发，也准备周全</h3><p>从证件到充电线，从天气到保险，<br>一份不容易遗漏的行前清单。</p><span class="guide-more">打开行前清单 ↗</span></button></div></section>
+    <section class="about section" id="about"><div class="about-symbol" aria-hidden="true">✳</div><div><p class="eyebrow">A LITTLE ABOUT THIS SPACE</p><h2>你好，欢迎来到我的旅行角落。</h2><p>从亚洲到美洲，从城市街角到山野海岸。<br>这里准备记录旅途中的风景、遇见的人，以及一路积累的经验。</p><p class="about-note">40 个目的地目录已就位。真实游记与照片正在等待加入。</p><a href="mailto:jalenchu49@gmail.com">聊聊旅行 · jalenchu49@gmail.com ↗</a></div></section>
+  </main>
+  <footer><a class="brand" href="#home">↗ 在路上</a><p>记录远方，也记录自己。</p><span>© <span id="year"></span> Jalen · 带着好奇心出发</span></footer>
+  <dialog id="article-dialog" aria-labelledby="article-title"><button class="close-dialog" id="close-dialog" aria-label="关闭文章">×</button><div id="article-content"></div></dialog>
+</body>
+</html>
