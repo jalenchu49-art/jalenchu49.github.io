@@ -7,3 +7,9 @@
 .statement{background:#e9ede4;border-bottom:1px solid var(--line);padding-block:22px}.statement .container{display:grid;grid-template-columns:160px 1fr;gap:25px;align-items:start}.statement .eyebrow{margin:0;color:#b4232d;font-size:20px;font-weight:750;line-height:1.5;letter-spacing:.04em}.statement p:last-child{margin:0;font-size:12px;line-height:1.9;color:#53614f}.roles{font-size:12px;color:var(--text);letter-spacing:.05em;margin:-10px 0 27px}.research-directions{margin-top:35px;border-top:1px solid #d0d7c8;padding-top:25px}.research-directions h3{font-family:var(--serif);font-weight:400;font-size:23px;margin:0 0 18px}.research-directions ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0 35px}.research-directions li{padding:13px 0;border-bottom:1px solid #d7ddcf;font-size:13px;display:flex;gap:12px}.research-directions li:before{content:'↗';color:#9a8359}.degree{font-size:24px;letter-spacing:-.02em}.about-content p{margin-bottom:22px}@media(max-width:650px){.statement{padding-block:18px}.statement .container{grid-template-columns:1fr;gap:8px}.statement p:last-child{font-size:11px}.research-directions ul{grid-template-columns:1fr}h1{font-size:48px}.degree{font-size:22px}.roles{font-size:11px}}
 
 @media(max-width:380px){.brand-name{display:none}}
+
+/* Prominent statement in every language. */
+.statement{background:#fff1f0;border-top:4px solid #b4232d;border-bottom:1px solid #e8b9b9;padding-block:28px}
+.statement .eyebrow{color:#b4232d;font-size:26px;font-weight:800;letter-spacing:.025em}
+.statement p:last-child{color:#9f202b;font-size:16px;font-weight:550;line-height:1.9}
+@media(max-width:650px){.statement{padding-block:22px}.statement .eyebrow{font-size:24px}.statement p:last-child{font-size:15px}}

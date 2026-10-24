@@ -51,10 +51,7 @@ function setLanguage(language) {
  document.querySelectorAll('[data-alt]').forEach(el => { el.alt = text[el.dataset.alt]; });
  document.querySelectorAll('[data-label]').forEach(el => { el.setAttribute('aria-label', text[el.dataset.label]); });
  document.querySelectorAll('[data-lang]').forEach(el => el.setAttribute('aria-pressed', String(el.dataset.lang === lang)));
- try { localStorage.setItem('honglin-profile-language', lang); } catch {}
 }
-let preferredLanguage = 'en';
-try { preferredLanguage = localStorage.getItem('honglin-profile-language') || 'en'; } catch {}
-setLanguage(preferredLanguage);
+setLanguage('en');
 document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
 document.getElementById('year').textContent = new Date().getFullYear();
